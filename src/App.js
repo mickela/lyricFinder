@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import HideableText from './hideable_text';
+import AutoCompleteText from './AutoCompleteText';
+import countries from './countries';
 
 class App extends Component {
   render() {
@@ -8,18 +11,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1 className="App-title">React ppl</h1>
         </header>
+        <div className="App-content">
+          <HideableText text="Round " />
+          <AutoCompleteText items={countries} />
+        </div>
       </div>
     );
   }
