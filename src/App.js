@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Navbar from './components/layouts/Navbar';
+import Index from './components/layouts/Index';
 import './App.css';
-import HideableText from './hideable_text';
-import AutoCompleteText from './AutoCompleteText';
-import countries from './countries';
+import './bootstrap.min.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React ppl</h1>
-        </header>
-        <div className="App-content">
-          <HideableText text="Round " />
-          <AutoCompleteText items={countries} />
-        </div>
-      </div>
+      <Router>
+        <React.Fragment>
+          <Navbar />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Index} ></Route>
+            </Switch>
+          </div>
+        </React.Fragment>
+      </Router>
     );
   }
 }

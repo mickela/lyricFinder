@@ -1,6 +1,6 @@
 {
-  "short_name": "Lyric search",
-  "name": "Lyric search App",
+  "short_name": "lyricFinder",
+  "name": "lyricFinder",
   "icons": [
     {
       "src": "favicon.ico",
