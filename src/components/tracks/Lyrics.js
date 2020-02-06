@@ -17,7 +17,7 @@ class Lyrics extends Component {
             return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`)
         }).then(res =>{
             this.setState(()=>({ track: res.data.message.body.track }))
-            console.log(res.data.message.body.track)
+            // console.log(res.data.message.body.track)
         })
         .catch(err => console.log(err))
     }
@@ -46,7 +46,7 @@ class Lyrics extends Component {
                             <strong>Album ID</strong>: {track.album_id}
                         </li>                        
                         <li className="list-group-item">
-                            <strong>Genre</strong>: {track.primary_genres.music_genre_list[0].music_genre.music_genre_name}
+                            <strong>Genre</strong>: {track.primary_genres.music_genre_list[0] !== undefined ? track.primary_genres.music_genre_list[0].music_genre.music_genre_name : 'none'}
                         </li>
                         <li className="list-group-item">
                             <strong>Explicit content</strong>: {track.explicit === 0 ? 'No' : 'Yes'}
