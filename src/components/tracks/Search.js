@@ -13,7 +13,7 @@ class Search extends Component {
     }
     onClick = (dispatch, country, e) =>{
         e.preventDefault();
-        console.log(country)
+        // console.log(country)
         dispatch({
             type: 'LOADING',
             payload: []
