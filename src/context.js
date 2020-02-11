@@ -11,6 +11,12 @@ const reducer = (state, action) =>{
                 track_list: action.payload,
                 heading: 'Search Results'
             }; 
+        case 'LOADING':
+            return {
+                ...state,
+                track_list: action.payload,
+                heading: 'Loading Search Results'
+            }; 
         default: return state;
     }
 }
